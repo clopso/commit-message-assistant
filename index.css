@@ -1,0 +1,74 @@
+/* Geral */
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, sans-serif;
+	background-color: #2B2B2B;
+}
+
+.screen {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+}
+
+h1 {
+	font-size: 3rem;
+	color: white;
+	margin-bottom: 1rem;
+	font-family: 'Courier New', Courier, monospace;
+}
+
+/* Card */
+.card {
+	background-color: #4F4F4F;
+	border-radius: 15px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+	padding: 2rem;
+	margin: 2rem;
+  margin-bottom: 10rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+}
+
+.card-content {
+	flex: 1;
+}
+
+.card-text {
+	background-color: #ffffff;
+	width: 100%;
+	padding: 0.5rem;
+	text-align: center;
+	font-size: 0.8rem;
+	margin-top: auto;
+	border-radius: 5px;
+}
+
+/* Botões */
+.button-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin-top: 2rem;
+}
+
+button {
+	background-color: orange;
+	border: none;
+	border-radius: 3px;
+	padding: 0.5rem 1rem;
+	margin: 0 1rem;
+	cursor: pointer;
+	font-size: 1rem;
+	color: blacks;
+	transition: background-color 0.3s ease-out;
+}
+
+button:hover {
+	background-color: #b97a04;
+}
