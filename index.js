@@ -1,35 +1,34 @@
 import { words, conectores, phrases, emojis } from './data.js'
 
-const btnFunny = document.getElementById("btn-funny")
+const copyPhrase = document.getElementById("copy-phrase")
 const btnRandom = document.getElementById("btn-random")
+const btnFunny = document.getElementById("btn-funny")
+const btnEmoji = document.getElementById("btn-emoji")
 const text = document.getElementById("text")
 
-function generateWords() {
-    const randomWordsNum1 = Math.floor(Math.random() * words.length);
-    const randomWordsNum2 = Math.floor(Math.random() * words.length);
+function randomGenerator(data){
+    const randomData = Math.floor(Math.random() * data.length)
 
-    const randomConectorNum = Math.floor(Math.random() * conectores.length);
-
-    const randomEmojisNum = Math.floor(Math.random() * emojis.length);
-    
-
-    const randomWordsAssemble = "\"" + emojis[randomEmojisNum] + " " + words[randomWordsNum1] + " " + conectores[randomConectorNum] + " " + words[randomWordsNum2] + "\""
-    const randomWords = "git commit -m " + randomWordsAssemble.toLowerCase()
-
-    return randomWords
+    return data[randomData]
 }
 
-function generatePhrases() {
-    const randomPhrasesNum = Math.floor(Math.random() * phrases.length);
-    const randomEmojisNum = Math.floor(Math.random() * emojis.length);
+function assemblePhrases(...commitPhrases){
+    let phrase = ""
+    for(let commitPhrase of commitPhrases){
+        phrase += randomGenerator(commitPhrase).toLowerCase() + " "
+    }
+    phrase = phrase.slice(0, -1);
 
-    const message = "git commit -m " + "\"" + emojis[randomEmojisNum] + " " + phrases[randomPhrasesNum] + "\""
-    
-    return message
+    const commit = "git commit -m \"" + phrase + "\""
+
+    text.innerHTML = commit
+    copyText(text.innerHTML)
+
+    const randomColor = Math.floor(Math.random()*16777215).toString(16);
+    copyPhrase.style.color = "#" + randomColor;
 }
 
 function copyText(text) {
-
     const tempElement = document.createElement('div');
     tempElement.innerHTML = text;
     
@@ -43,21 +42,22 @@ function copyText(text) {
     selection.addRange(range);
     
     navigator.clipboard.writeText(tempElement.textContent).then(() => {
-      console.log('Copied to clipboard');
+        copyPhrase.innerHTML = "Frase copiada!"
     }).catch((err) => {
       console.error('Failed to copy: ', err);
     });
     
     document.body.removeChild(tempElement);
-
 }
 
 btnFunny.onclick = function () {
-    text.innerHTML = generatePhrases()
-    copyText(text.innerHTML)
+    assemblePhrases(emojis, phrases)
 };
 
 btnRandom.onclick = function () {
-    text.innerHTML = generateWords()
-    copyText(text.innerHTML)
+    assemblePhrases(emojis, words, conectores, words)
+};
+
+btnEmoji.onclick = function () {
+    assemblePhrases(emojis)
 };
