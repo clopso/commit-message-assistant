@@ -15,13 +15,13 @@ function randomGenerator(data){
 function assemblePhrases(...commitPhrases){
     let phrase = ""
     for(let commitPhrase of commitPhrases){
-        phrase += randomGenerator(commitPhrase).toLowerCase() + " "
+        phrase += randomGenerator(commitPhrase) + " "
     }
     phrase = phrase.slice(0, -1);
 
     const commit = "git commit -m \"" + phrase + "\""
 
-    text.innerHTML = commit
+    text.innerHTML = commit.toLowerCase()
     copyText(text.innerHTML)
 
     const randomColor = Math.floor(Math.random()*16777215).toString(16);

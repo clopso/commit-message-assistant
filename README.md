@@ -4,8 +4,11 @@ Uma ferramenta muito util (ou não) que gera frases de commits aleatórias pra v
 
 ## Como usar
 
-Para usar é simples!  
-Siga o passo a passo a seguir:
+Para usar é simples!
+
+Use a [demonstração](https://clopso.github.io/random-commit-message/)
+
+Ou baixe seguindo o passo a passo a seguir:
 
 ```shell
 # Clone o repositório
