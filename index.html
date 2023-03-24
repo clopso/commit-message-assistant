@@ -2,8 +2,10 @@
 <html>
   <head>
     <title>Random commit messages</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <link rel="stylesheet" type="text/css" href="index.css" />
     <script type="module" src="index.js"></script>
+    <script src="https://kit.fontawesome.com/b3f377d81a.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <div class="screen">
@@ -23,8 +25,33 @@
             <button id="btn-funny">Frase engraçada</button>
             <button id="btn-random">Frase aleatória</button>
             <button id="btn-emoji">Emoji aleatório</button>
+            <div class="dropdown">
+              <button id="btn-config" class="dropbtn">
+                <i class="fas fa-cog fa-2x"></i>
+              </button>
+              <div id="settingsMenu" class="dropdown-content">
+                <div class="checkbox-container">
+
+                  <div class="settings">
+                    <input type="checkbox" name="checkbox-am" id="checkbox-am">
+                    <label for="checkbox-am">Usar "-am" em vez de "-m"</label>
+                  </div>
+                  <div class="settings">
+                    <input type="checkbox" name="checkbox-quote" id="checkbox-quote">
+                    <label for="checkbox-quote">Aspas simples</label>
+                  </div>
+                  
+                  <!-- 
+                  <div class="settings">
+                    <input type="checkbox" name="textCheckbox" id="textCheckbox">
+                    <label for="textCheckbox">Texto personalizado</label>
+                  </div>
+                  -->
+                </div>
+              </div>
+            </div>
           </div>
-		  <div id="copy-phrase"></div>
+		      <div id="copy-phrase"></div>
         </div>
       </div>
     </div>

@@ -1,16 +1,31 @@
 import { words, conectores, phrases, emojis } from './data.js'
 
-const copyPhrase = document.getElementById("copy-phrase")
-const btnRandom = document.getElementById("btn-random")
+const text = document.getElementById("text")
+
 const btnFunny = document.getElementById("btn-funny")
 const btnEmoji = document.getElementById("btn-emoji")
-const text = document.getElementById("text")
+const btnRandom = document.getElementById("btn-random")
+const btnConfig = document.getElementById("btn-config")
+
+const checkboxAM = document.getElementById("checkbox-am")
+const checkboxQuote = document.getElementById("checkbox-quote")
+
+const copyPhrase = document.getElementById("copy-phrase")
 
 function randomGenerator(data){
     const randomData = Math.floor(Math.random() * data.length)
 
     return data[randomData]
 }
+
+function assembleCommitMSG(phrase){
+    let am  = (checkboxAM.checked ? " -am " : " -m ")
+    let quote = (checkboxQuote.checked ? "\'" : "\"")
+
+    const commit = "git commit" + am + quote + phrase + quote
+    return commit
+}
+
 
 function assemblePhrases(...commitPhrases){
     let phrase = ""
@@ -19,7 +34,7 @@ function assemblePhrases(...commitPhrases){
     }
     phrase = phrase.slice(0, -1);
 
-    const commit = "git commit -m \"" + phrase + "\""
+    const commit = assembleCommitMSG(phrase)
 
     text.innerHTML = commit.toLowerCase()
     copyText(text.innerHTML)
@@ -61,3 +76,7 @@ btnRandom.onclick = function () {
 btnEmoji.onclick = function () {
     assemblePhrases(emojis)
 };
+
+btnConfig.onclick = function () {
+    document.getElementById("settingsMenu").classList.toggle("show");
+}
