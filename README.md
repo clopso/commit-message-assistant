@@ -1,6 +1,6 @@
-# Random commit messages
+# Commit messages assistant
 
-Uma ferramenta muito util (ou não) que gera frases de commits aleatórias pra você dev que não quer gastar tempo pensando!
+Uma ferramenta muito util (ou não) que te ajuda a fazer commits pra você dev que não quer gastar muito tempo!
 
 ## Como usar
 
