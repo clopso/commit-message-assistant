@@ -1,30 +1,42 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Random commit messages</title>
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <title>Commit messages assistant</title>
     <link rel="stylesheet" type="text/css" href="index.css" />
-    <script type="module" src="index.js"></script>
+    <script type="module" src="js/index.js"></script>
     <script src="https://kit.fontawesome.com/b3f377d81a.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <div class="screen">
-      <h1>Random commit messages</h1>
+      <h1>Commit messages assistant</h1>
       <div class="card">
         <div class="card-content">
+          <div id="custom-input">
+            <label id="custom-text" for="custom-commit">
+              <b>
+                Commit message:
+              </b>
+            </label>
+            <textarea id="custom-commit" name="custom-commit"></textarea>
+          </div>
           <div class="card-text">
             <p>
               <b id="text">
-                Clique nos botões abaixo para gerar uma mensagem de confirmação
-                aleatória:
+                Clique nos botões abaixo para gerar uma mensagem de commit aleatória
               </b>
             </p>
           </div>
 
           <div class="button-container">
-            <button id="btn-funny">Frase engraçada</button>
-            <button id="btn-random">Frase aleatória</button>
-            <button id="btn-emoji">Emoji aleatório</button>
+            <div id="random-buttons">
+              <button id="btn-funny">Frase engraçada</button>
+              <button id="btn-random">Frase aleatória</button>
+              <button id="btn-emoji">Emoji aleatório</button>
+            </div>
+            <div id="custom-buttons">
+              <button id="btn-custom">Gerar commit com frase personalizada</button>
+            </div>
+
             <div class="dropdown">
               <button id="btn-config" class="dropbtn">
                 <i class="fas fa-cog fa-2x"></i>
@@ -40,16 +52,14 @@
                     <input type="checkbox" name="checkbox-quote" id="checkbox-quote">
                     <label for="checkbox-quote">Aspas simples</label>
                   </div>
-                  
-                  <!-- 
                   <div class="settings">
-                    <input type="checkbox" name="textCheckbox" id="textCheckbox">
-                    <label for="textCheckbox">Texto personalizado</label>
+                    <input type="checkbox" name="checkbox-text" id="checkbox-text">
+                    <label for="checkbox-text">Texto personalizado</label>
                   </div>
-                  -->
                 </div>
               </div>
             </div>
+            
           </div>
 		      <div id="copy-phrase"></div>
         </div>

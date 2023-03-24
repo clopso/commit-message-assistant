@@ -6,18 +6,18 @@ Uma ferramenta muito util (ou não) que gera frases de commits aleatórias pra v
 
 Para usar é simples!
 
-Use a [demonstração](https://clopso.github.io/random-commit-message/)
+Use a [demonstração](https://clopso.github.io/commit-message-assistant/)
 
 Ou baixe seguindo o passo a passo a seguir:
 
 ```shell
 # Clone o repositório
-git clone https://github.com/clopso/random-commit-message.git
+git clone https://github.com/clopso/commit-message-assistant.git
 ```
 
 ```shell
 # Abra a pasta
-cd random-commit-message
+cd commit-message-assistant
 ```
 
 ```shell
