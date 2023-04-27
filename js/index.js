@@ -4,20 +4,21 @@ import { words, conectores, phrases, emojis } from './data.js'
 const generatedText = document.getElementById("text")
 
 // Custom commit area
-const customElements = [
-    document.getElementById("custom-input"),
-    document.getElementById("custom-buttons")
-]
+const customButtons = document.getElementById("custom-buttons")
+const customDiv = document.getElementById("custom-div")
 
+const customCommit = document.getElementById("custom-commit")
+const btnCustom = document.getElementById("btn-custom")
+const prefixCustom = document.getElementById("custom-prefix")
+
+// Random commit area
 const randButtons = document.getElementById("random-buttons")
 
 const btnFunny = document.getElementById("btn-funny")
 const btnEmoji = document.getElementById("btn-emoji")
 const btnRandom = document.getElementById("btn-random")
 
-const customCommit = document.getElementById("custom-commit")
-const btnCustom = document.getElementById("btn-custom")
-
+// Config area
 const btnConfig = document.getElementById("btn-config")
 
 const checkboxAM = document.getElementById("checkbox-am")
@@ -52,6 +53,23 @@ function copyText(text) {
     });
     
     document.body.removeChild(tempElement);
+}
+
+function checkSelection(){
+    switch (prefixCustom.selectedIndex) {
+        case 0:
+            return randomGenerator(emojis)
+        case 1:
+            return "fix:"
+        case 2:
+            return "feat:"
+        case 3:
+            return "docs:"
+        case 4:
+            return "breaking changes:"
+        default:
+            return null
+    }
 }
 
 function assembleCommitMSG(phrase){
@@ -96,7 +114,7 @@ btnEmoji.onclick = function () {
 };
 
 btnCustom.onclick = function () {
-    let customCommitMessage = randomGenerator(emojis) + " " + customCommit.value
+    let customCommitMessage = checkSelection() + " " + customCommit.value
     customCommitMessage = assembleCommitMSG(customCommitMessage)
     printGeneratedCommit(customCommitMessage)
 }
@@ -105,16 +123,14 @@ btnConfig.onclick = function () {
     document.getElementById("settingsMenu").classList.toggle("show");
 }
 
-checkboxText.addEventListener("change", (el) => {
+checkboxText.addEventListener("change", () => {
     if(checkboxText.checked){
-        for(let customElement of customElements){
-            customElement.style.display = "block"
-        }
+        customButtons.style.display = "block"
+        customDiv.style.display = "inline-flex"
         randButtons.style.display = "none"
     }else{
-        for(let customElement of customElements){
-            customElement.style.display = "none"
-        }
+        customButtons.style.display = "none"
+        customDiv.style.display = "none"
         randButtons.style.display = "block"
     }
 })

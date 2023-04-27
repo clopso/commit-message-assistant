@@ -47,6 +47,22 @@ h1 {
 	color: #ffffff;
 }
 
+#custom-prefix {
+	border: none;
+	background-color: #fff;
+	color: #333;
+	font-size: 16px;
+	width: 9vw;
+	margin: 10px;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+#custom-prefix option:checked {
+	background-color: #f3f3f3;
+	color: #000;
+}
+
 #custom-commit {
 	background-color: #ffffff;
 	font-family: Arial, sans-serif;
@@ -57,7 +73,7 @@ h1 {
 	border: none;
 	border-radius: 5px;
 	width: 25vw;
-	padding: 10px;
+	padding: 20px;
 	padding-bottom:0px;
 	margin: 10px;
 	outline: none;
@@ -98,13 +114,13 @@ button:hover {
 	background-color: #b97a04;
 }
 
-
-#custom-input{
+#custom-buttons{
 	display: none;
 }
 
-#custom-buttons{
-	display: none;
+#custom-div {
+	vertical-align:middle;
+    display: none;
 }
 
 #copy-phrase {

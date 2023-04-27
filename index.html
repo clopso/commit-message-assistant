@@ -18,7 +18,16 @@
                 Commit message:
               </b>
             </label>
-            <textarea id="custom-commit" name="custom-commit"></textarea>
+            <div id="custom-div">
+              <select id="custom-prefix" name="custom-prefix" required="required">
+                <option value="emoji">Emoji</option>
+                <option value="fix">Fix</option>
+                <option value="feat">Feat</option>
+                <option value="docs">Docs</option>
+                <option value="breaking">Breaking change</option>
+              </select>
+              <textarea id="custom-commit" name="custom-commit"></textarea>
+            </div>
           </div>
           <div class="card-text">
             <p>
@@ -44,7 +53,10 @@
               </button>
               <div id="settingsMenu" class="dropdown-content">
                 <div class="checkbox-container">
-
+                  <div class="settings">
+                    <input type="checkbox" name="checkbox-text" id="checkbox-text">
+                    <label for="checkbox-text">Texto personalizado</label>
+                  </div>
                   <div class="settings">
                     <input type="checkbox" name="checkbox-am" id="checkbox-am">
                     <label for="checkbox-am">Usar "-am" em vez de "-m"</label>
@@ -52,10 +64,6 @@
                   <div class="settings">
                     <input type="checkbox" name="checkbox-quote" id="checkbox-quote">
                     <label for="checkbox-quote">Aspas simples</label>
-                  </div>
-                  <div class="settings">
-                    <input type="checkbox" name="checkbox-text" id="checkbox-text">
-                    <label for="checkbox-text">Texto personalizado</label>
                   </div>
                 </div>
               </div>
