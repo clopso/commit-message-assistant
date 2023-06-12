@@ -15,7 +15,7 @@ body {
 }
 
 h1 {
-	font-size: 4.5vw;
+	font-size: 4vw;
 	color: white;
 	margin-bottom: 1rem;
 	font-family: 'Courier New', Courier, monospace;
@@ -82,7 +82,6 @@ h1 {
 
 .card-text {
 	background-color: #ffffff;
-	width: 50vw;
 	padding: 2%;
 	text-align: center;
 	font-size: 1.5rem;
@@ -102,8 +101,8 @@ button {
 	background-color: orange;
 	border: none;
 	border-radius: 0.5vw;
-	padding: 1vw 2vw;
-	margin: 0 1rem;
+	padding: 2vh 2vw;
+	margin: 0 1vw;
 	cursor: pointer;
 	font-size: 1.2rem;
 	color: blacks;
@@ -135,7 +134,7 @@ button:hover {
 }
 
 .dropbtn {
-	padding: 16px;
+	padding: 0.7vw;
 	font-size: 16px;
 	border: none;
 }

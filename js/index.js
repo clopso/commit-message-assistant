@@ -1,5 +1,7 @@
 import { words, conectores, phrases, emojis } from './data.js'
 
+/* CONSTANTS */
+
 // Generated commit
 const generatedText = document.getElementById("text")
 
@@ -26,6 +28,8 @@ const checkboxQuote = document.getElementById("checkbox-quote")
 const checkboxText = document.getElementById("checkbox-text")
 
 const copyPhrase = document.getElementById("copy-phrase")
+
+/* FUNCTIONS */
 
 function randomGenerator(data){
     const randomData = Math.floor(Math.random() * data.length)
@@ -100,6 +104,7 @@ function assemblePhrases(...commitPhrases){
     printGeneratedCommit(commit.toLocaleLowerCase())
 }
 
+/* EVENTS */
 
 btnFunny.onclick = function () {
     assemblePhrases(emojis, phrases)
